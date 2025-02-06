@@ -18,6 +18,12 @@
     <symbol id="figma" width="24" height="24" viewBox="0 0 24 24">
       <path fill-rule="evenodd" d="M15 10a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm-2 5.46A4 4 0 0 0 17.65 9a4.01 4.01 0 0 0 .18-5.83A4 4 0 0 0 15 2H9a4 4 0 0 0-2.65 7 4.01 4.01 0 0 0 0 6A3.98 3.98 0 0 0 5 18a4 4 0 1 0 8 0v-2.54ZM11 16H9a2 2 0 1 0 2 2v-2ZM9 8h2V4H9a2 2 0 1 0 0 4Zm0 2a2 2 0 1 0 0 4h2v-4H9Zm4-2V4h2a2 2 0 0 1 0 4h-2Z"/>
     </symbol>
+    <symbol id="linkedin" width="24" height="24" viewBox="0 0 24 24">
+      <path fill-rule="evenodd" d="M20 2H4a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2ZM8 19H5V9h3v10Zm-1.5-11.25A1.75 1.75 0 1 1 8 6a1.75 1.75 0 0 1-1.5 1.75ZM19 19h-3v-5c0-1.38-.62-2-1.67-2s-1.83.62-1.83 2v5h-3V9h3v1.33a3.36 3.36 0 0 1 3-1.58c2.15 0 3.5 1.33 3.5 4v6.25Z"/>
+    </symbol>
+    <symbol id="fiverr" width="24" height="24" viewBox="0 0 24 24">
+      <path fill-rule="evenodd" d="M14 3h-3a3 3 0 0 0-3 3v3H6v4h2v8h4v-8h3l1-4h-4V7h3V3Z"/>
+    </symbol>
     <symbol id="copy" width="24" height="24" viewBox="0 0 24 24">
       <path d="M3 2h12v4H7v10H3V2Zm6 20V8h12v11l-3 3H9Z"/>
     </symbol>

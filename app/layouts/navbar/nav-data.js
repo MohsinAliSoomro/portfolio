@@ -21,14 +21,14 @@ export const navLinks = [
 
 export const socialLinks = [
   {
-    label: 'Bluesky',
-    url: `https://bsky.app/profile/${config.bluesky}`,
-    icon: 'bluesky',
+    label: 'Fiverr',
+    url: `https://www.fiverr.com/dvlopermohsin`,
+    icon: 'fiverr',
   },
   {
-    label: 'Figma',
-    url: `https://www.figma.com/${config.figma}`,
-    icon: 'figma',
+    label: 'LinkedIn',
+    url: `hhttps://www.linkedin.com/in/mohsin-ali-soomro/`,
+    icon: 'linkedin',
   },
   {
     label: 'Github',
