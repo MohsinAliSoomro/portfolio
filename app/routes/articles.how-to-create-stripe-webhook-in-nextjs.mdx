@@ -1,0 +1,135 @@
+---
+title: 'How to create stripe webhook in nextjs 13.4.4'
+abstract: A webhook is a method of automating and integrating data or events between different applications or systems over the internet. It allows one application to send real-time information to another application or service when a specific event or trigger occurs.
+date: '2024-08-03'
+banner: /static/hello-world-banner.jpg
+---
+
+## As you follow this article. I think you better know about nextjs.
+
+Let's know what a webhook is.
+
+A webhook is a method of automating and integrating data or events between different applications or systems over the internet. It allows one application to send real-time information to another application or service when a specific event or trigger occurs.
+
+Remember points when you work with stripe webhook
+Wehbook accept rawbody
+It must be post request
+Event you should handle.
+
+Let's code.
+
+### Create a file route.ts inside a api folder,
+
+api/stripe/webhook/route.ts
+
+```jsx
+import Stripe from "stripe";
+import { NextRequest } from "next/server";
+import { OrderTable, db } from "@/lib/drizzleOrm";
+import { headers } from "next/headers";
+const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, {
+  apiVersion: "2022-11-15",
+  typescript: true,
+});
+
+export async function POST(request: NextRequest) {
+  const body = await request.text();
+  const endpointSecret = process.env.STRIPE_SECRET_WEBHOOK_KEY!;
+  const sig = headers().get("stripe-signature") as string;
+  let event: Stripe.Event;
+  try {
+    event = stripe.webhooks.constructEvent(body, sig, endpointSecret);
+  } catch (err) {
+    return new Response(`Webhook Error: ${err}`, {
+      status: 400,
+    });
+  }
+
+  switch (event.type) {
+    case "checkout.session.async_payment_failed":
+      const checkoutSessionAsyncPaymentFailed = event.data.object;
+      break;
+    case "checkout.session.async_payment_succeeded":
+      const checkoutSessionAsyncPaymentSucceeded = event.data.object;
+
+      break;
+    case "checkout.session.completed":
+      const checkoutSessionCompleted: any = event.data.object;
+      const response1 = await db
+        .insert(OrderTable)
+        .values({
+          userId: checkoutSessionCompleted?.metadata.userId,
+          itemCount: 1,
+          total: checkoutSessionCompleted?.amount_total as any,
+          isComplete: true,
+        })
+        .returning();
+      break;
+    default:
+      console.log(`Unhandled event type ${event.type}`);
+  }
+  return new Response("RESPONSE EXECUTE", {
+    status: 200,
+  });
+}
+```
+
+- Let's break the code,
+
+```jsx
+await request.text() => this will convert your rawbody to string
+```
+
+<ol>
+  <li>
+    It imports necessary modules and initializes the Stripe API with the provided secret
+    key.
+  </li>
+  <li>
+    It imports necessary modules and initializes the Stripe API with the provided secret
+    key.
+  </li>
+  <li>
+    It defines an asynchronous ```function POST(request: NextRequest)``` that will handle
+    incoming HTTP POST requests.{' '}
+  </li>
+  <li>
+    Inside the function:
+    - It extracts the request body and the Stripe webhook signature. 
+    - It attempts to constructa Stripe event from the request data using the Stripe library. ## The first iteration
+    - If there's an error during event construction, it returns a 400 Bad Request response with an error message.
+  </li>
+  <li>
+    It then checks the type of the Stripe event and performs different actions based on the event type:
+    - For ```"checkout.session.async_payment_failed,"``` it does nothing specific.
+    - For ```"checkout.session.async_payment_succeeded,"``` it does nothing specific.
+    - For ```"checkout.session.completed,"``` it inserts an order record into a database table using the Drizzle ORM library.
+
+  </li>
+  <li>
+    It logs an error message for any unhandled event types.
+  </li>
+    <li>
+    Finally, it returns a ```200``` OK response with the message "RESPONSE EXECUTE" to acknowledge the webhook execution.
+  </li>
+</ol>
+
+When a webhook calls it saves record in database if checkout session complete. For other events you should follow according
+
+
+
+Now how to test webhook,
+
+You can test webhook on localhost
+
+
+
+[Stripe](https://stripe.com/docs/webhooks) => developer => webhook
+
+[Stripe localhost](https://dashboard.stripe.com/test/webhooks/create) 
+Here you will get test key for localhost
+
+
+
+<strong>Note</strong>: Webhook localhost key and production key are different, localhost key you will get on webhook page, for production get you have to register key webhook, and click on reveal you will get a webhook production key
+
