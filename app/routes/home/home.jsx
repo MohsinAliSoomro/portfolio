@@ -4,6 +4,8 @@ import gamestackTexture2 from '~/assets/gamestack-list.jpg';
 import gamestackTextureLarge from '~/assets/gamestack-login-large.jpg';
 import gamestackTexturePlaceholder from '~/assets/gamestack-login-placeholder.jpg';
 import gamestackTexture from '~/assets/gamestack-login.jpg';
+import discotechTexture from '~/assets/discotech-home.png';
+import discotechTextureLarge from '~/assets/discotech-home-large.png';
 import sliceTextureLarge from '~/assets/slice-app-large.jpg';
 import sliceTexturePlaceholder from '~/assets/slice-app-placeholder.jpg';
 import sliceTexture from '~/assets/slice-app.jpg';
@@ -98,7 +100,7 @@ export const Home = () => {
         sectionRef={intro}
         scrollIndicatorHidden={scrollIndicatorHidden}
       />
-      <ProjectSummary
+      {/* <ProjectSummary
         id="project-1"
         sectionRef={projectOne}
         visible={visibleSections.includes(projectOne.current)}
@@ -117,6 +119,31 @@ export const Home = () => {
             },
           ],
         }}
+      /> */}
+      <ProjectSummary
+        id="project-1"
+        alternate
+        sectionRef={projectOne}
+        visible={visibleSections.includes(projectOne.current)}
+        index={1}
+        title="Discotech is a premier nightlife app that enables users to discover events"
+        description="Discotech is a leading nightlife app that allows users to discover events, join guest lists, purchase tickets, and reserve VIP tables at clubs and festivals worldwide"
+        buttonText="View website"
+        buttonLink="https://app.discotech.me/"
+        model={{
+          type: 'phone',
+          alt: 'App login screen',
+          textures: [
+            {
+              srcSet: `${discotechTexture} 375w, ${discotechTextureLarge} 750w`,
+              placeholder: gamestackTexturePlaceholder,
+            },
+            {
+              srcSet: `${gamestackTexture2} 375w, ${gamestackTexture2Large} 750w`,
+              placeholder: gamestackTexture2Placeholder,
+            },
+          ],
+        }}
       />
       <ProjectSummary
         id="project-2"
@@ -124,16 +151,16 @@ export const Home = () => {
         sectionRef={projectTwo}
         visible={visibleSections.includes(projectTwo.current)}
         index={2}
-        title="Video game progress tracking"
-        description="Design and development for a video game tracking app built in React Native"
+        title="Discotech is a premier nightlife app that enables users to discover events"
+        description="Discotech is a leading nightlife app that allows users to discover events, join guest lists, purchase tickets, and reserve VIP tables at clubs and festivals worldwide"
         buttonText="View website"
-        buttonLink="https://gamestack.hamishw.com"
+        buttonLink="https://app.discotech.me/"
         model={{
           type: 'phone',
           alt: 'App login screen',
           textures: [
             {
-              srcSet: `${gamestackTexture} 375w, ${gamestackTextureLarge} 750w`,
+              srcSet: `${discotechTexture} 375w, ${discotechTextureLarge} 750w`,
               placeholder: gamestackTexturePlaceholder,
             },
             {
