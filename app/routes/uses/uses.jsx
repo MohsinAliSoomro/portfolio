@@ -45,12 +45,13 @@ export const Uses = () => {
                 <List>
                   <ListItem>
                     <Link href="https://www.figma.com">Figma</Link> is my primary tool for
-                    UI design these days. Made the switch from Sketch in 2020 and haven’t
+                    UI design these days.
+                    {/* Made the switch from Sketch in 2020 and haven’t
                     looked back. I’ve also created{' '}
                     <Link href="https://www.figma.com/@hamish">a few plugins</Link> that
-                    you can install.
+                    you can install. */}
                   </ListItem>
-                  <ListItem>
+                  {/* <ListItem>
                     Any motion graphics I create are created in Adobe After Effects. So
                     far I haven’t found a non-Adobe product that’s as good. If anyone has
                     suggestions please <Link href="/contact">message me</Link>.
@@ -60,7 +61,7 @@ export const Uses = () => {
                     <Link href="https://www.blender.org/">Blender</Link>. Since 2.8 it’s
                     become way simpler to use and in a lot of ways better than expensive
                     paid tools like 3DS Max or Maya.
-                  </ListItem>
+                  </ListItem> */}
                 </List>
               </ProjectSectionText>
             </ProjectTextRow>
@@ -120,17 +121,17 @@ export const Uses = () => {
               <ProjectSectionHeading>System</ProjectSectionHeading>
               <Table>
                 <TableBody>
-                  <TableRow>
+                  {/* <TableRow>
                     <TableHeadCell>Desktop</TableHeadCell>
                     <TableCell>Custom built</TableCell>
                   </TableRow>
                   <TableRow>
                     <TableHeadCell>Operating system</TableHeadCell>
                     <TableCell>Arch Linux (by the way)</TableCell>
-                  </TableRow>
+                  </TableRow> */}
                   <TableRow>
                     <TableHeadCell>Browser</TableHeadCell>
-                    <TableCell>Zen Browser</TableCell>
+                    <TableCell>Chrome Browser</TableCell>
                   </TableRow>
                   <TableRow>
                     <TableHeadCell>Monitor</TableHeadCell>
@@ -142,20 +143,20 @@ export const Uses = () => {
                   </TableRow>
                   <TableRow>
                     <TableHeadCell>Mouse</TableHeadCell>
-                    <TableCell>Logitech G403</TableCell>
+                    <TableCell>UGreen MU006</TableCell>
                   </TableRow>
                   <TableRow>
                     <TableHeadCell>Laptop</TableHeadCell>
-                    <TableCell>Macbook Pro 14″</TableCell>
+                    <TableCell>M4 Pro″</TableCell>
                   </TableRow>
-                  <TableRow>
+                  {/* <TableRow>
                     <TableHeadCell>Headphones</TableHeadCell>
                     <TableCell>Audio Technica ATH-M50x/Apple Airpods</TableCell>
                   </TableRow>
                   <TableRow>
                     <TableHeadCell>Microphone</TableHeadCell>
                     <TableCell>Blue Yeti</TableCell>
-                  </TableRow>
+                  </TableRow> */}
                 </TableBody>
               </Table>
             </ProjectTextRow>
