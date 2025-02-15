@@ -1,17 +1,21 @@
 import gamestackTexture2Large from '~/assets/gamestack-list-large.jpg';
 import gamestackTexture2Placeholder from '~/assets/gamestack-list-placeholder.jpg';
 import gamestackTexture2 from '~/assets/gamestack-list.jpg';
-import gamestackTextureLarge from '~/assets/gamestack-login-large.jpg';
+// import gamestackTextureLarge from '~/assets/gamestack-login-large.jpg';
+// import gamestackTexture from '~/assets/gamestack-login.jpg';
 import gamestackTexturePlaceholder from '~/assets/gamestack-login-placeholder.jpg';
-import gamestackTexture from '~/assets/gamestack-login.jpg';
 import discotechTexture from '~/assets/discotech-home.png';
 import discotechTextureLarge from '~/assets/discotech-home-large.png';
-import sliceTextureLarge from '~/assets/slice-app-large.jpg';
-import sliceTexturePlaceholder from '~/assets/slice-app-placeholder.jpg';
-import sliceTexture from '~/assets/slice-app.jpg';
-import sprTextureLarge from '~/assets/spr-lesson-builder-dark-large.jpg';
-import sprTexturePlaceholder from '~/assets/spr-lesson-builder-dark-placeholder.jpg';
-import sprTexture from '~/assets/spr-lesson-builder-dark.jpg';
+import chymaTexture from '~/assets/chymaphone.webp';
+import chymaTextureLarge from '~/assets/chymaphone.webp';
+import duCareTexture from '~/assets/du-cates.webp';
+import duCareTextureLarge from '~/assets/du-cates.webp';
+// import sliceTextureLarge from '~/assets/slice-app-large.jpg';
+// import sliceTexturePlaceholder from '~/assets/slice-app-placeholder.jpg';
+// import sliceTexture from '~/assets/slice-app.jpg';
+// import sprTextureLarge from '~/assets/spr-lesson-builder-dark-large.jpg';
+// import sprTexturePlaceholder from '~/assets/spr-lesson-builder-dark-placeholder.jpg';
+// import sprTexture from '~/assets/spr-lesson-builder-dark.jpg';
 import { Footer } from '~/components/footer';
 import { baseMeta } from '~/utils/meta';
 import { Intro } from './intro';
@@ -151,26 +155,51 @@ export const Home = () => {
         sectionRef={projectTwo}
         visible={visibleSections.includes(projectTwo.current)}
         index={2}
-        title="Discotech is a premier nightlife app that enables users to discover events"
-        description="Discotech is a leading nightlife app that allows users to discover events, join guest lists, purchase tickets, and reserve VIP tables at clubs and festivals worldwide"
+        title="Chyma is a revolutionary hotel call service app"
+        description="Chyma is a revolutionary hotel call service app that revolutionizes room service by providing guests with a seamless and convenient experience. With Chyma, guests can easily place orders, request assistance, and communicate with hotel staff, all from the comfort of their rooms."
         buttonText="View website"
-        buttonLink="https://app.discotech.me/"
+        buttonLink="https://alimohsin.com"
         model={{
           type: 'phone',
           alt: 'App login screen',
           textures: [
             {
-              srcSet: `${discotechTexture} 375w, ${discotechTextureLarge} 750w`,
+              srcSet: `${chymaTexture} 375w, ${chymaTextureLarge} 750w`,
               placeholder: gamestackTexturePlaceholder,
             },
             {
-              srcSet: `${gamestackTexture2} 375w, ${gamestackTexture2Large} 750w`,
+              srcSet: `${chymaTexture} 375w, ${chymaTextureLarge} 750w`,
               placeholder: gamestackTexture2Placeholder,
             },
           ],
         }}
       />
       <ProjectSummary
+        id="project-3"
+        alternate
+        sectionRef={projectThree}
+        visible={visibleSections.includes(projectThree.current)}
+        index={3}
+        title="DU Cares is a comprehensive healthcare application"
+        description="DU Cares is a comprehensive healthcare application designed to streamline the management of user reports and information. It provides doctors with an efficient platform to access and manage patient data, enhancing the quality of care and patient outcomes."
+        buttonText="View website"
+        buttonLink="https://catalystengage.alliancecaretech-apps.com"
+        model={{
+          type: 'phone',
+          alt: 'App login screen',
+          textures: [
+            {
+              srcSet: `${duCareTexture} 375w, ${duCareTextureLarge} 750w`,
+              placeholder: gamestackTexturePlaceholder,
+            },
+            {
+              srcSet: `${duCareTexture} 375w, ${duCareTextureLarge} 750w`,
+              placeholder: gamestackTexture2Placeholder,
+            },
+          ],
+        }}
+      />
+      {/* <ProjectSummary
         id="project-3"
         sectionRef={projectThree}
         visible={visibleSections.includes(projectThree.current)}
@@ -189,7 +218,7 @@ export const Home = () => {
             },
           ],
         }}
-      />
+      /> */}
       <Profile
         sectionRef={details}
         visible={visibleSections.includes(details.current)}
