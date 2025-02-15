@@ -61,7 +61,6 @@ export async function action({ context, request }) {
   }
 
   const { template_id, user_id, service_id, accessToken } = process.env;
-  console.log({ template_id, user_id, service_id, accessToken });
   const params = {
     template_id,
     user_id,
